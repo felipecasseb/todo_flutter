@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_flutter/screens/home_screen.dart';
+import 'package:todo_flutter/screens/recovery_password_screen.dart';
 import 'package:todo_flutter/screens/signup_screen.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -9,6 +12,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -40,10 +45,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 ElevatedButton(
-                    onPressed: (){
-                      debugPrint("Email: ${emailController.text}, Senha: ${passwordController.text}");
+                    onPressed: ()async{
+                      await auth.signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text
+                      ).then((value){
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeScreen())
+                        );
+                      });
                     },
                     child: Text("Acessar")
+                ),
+                TextButton(
+                    onPressed: (){
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => RecoveryPasswordScreen())
+                      );
+                    },
+                    child: Text("Esqueci minha senha")
                 ),
                 Text("Ainda não tem acesso?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                 TextButton(
