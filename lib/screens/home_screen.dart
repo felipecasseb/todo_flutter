@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_flutter/screens/form_screen.dart';
 import 'package:todo_flutter/screens/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: Center(child: Text(auth.currentUser!.email!, style: TextStyle(fontSize: 32),),),
+      body: Center(child: ElevatedButton(
+        onPressed: (){
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => FormScreen())
+          );
+        },
+        child: Text("Novo produto"),
+      ),),
     );
   }
 }
