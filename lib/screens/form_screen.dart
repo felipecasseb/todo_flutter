@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
@@ -11,6 +12,7 @@ class FormScreen extends StatefulWidget {
 class _FormScreenState extends State<FormScreen> {
   
   FirebaseFirestore firestore = FirebaseFirestore.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   TextEditingController codigoBarraController = TextEditingController();
   TextEditingController descricaoController = TextEditingController();
@@ -126,7 +128,7 @@ class _FormScreenState extends State<FormScreen> {
                   });
                   await firestore
                       .collection("usuarios")
-                      .doc("emailteste1@gmail.com")
+                      .doc(auth.currentUser!.email)
                       .collection("produtos").add({
                     "codigo_barras" : codigoBarraController.text,
                     "dentro_carrinho" : dentroCarrinho,
