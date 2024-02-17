@@ -18,7 +18,7 @@ class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Recuperar senha"),
+        title: const Text("Recuperar senha"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -28,16 +28,17 @@ class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Email",
               ),
             ),
             ElevatedButton(
                 onPressed: ()async{
                   await auth.sendPasswordResetEmail(email: emailController.text);
+                  // ignore: use_build_context_synchronously
                   Navigator.pop(context);
                 },
-                child: Text("Recuperar senha")
+                child: const Text("Recuperar senha")
             )
           ],
         ),

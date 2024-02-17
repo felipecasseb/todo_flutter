@@ -70,7 +70,7 @@ class _FormScreenState extends State<FormScreen> {
       appBar: AppBar(
         title: Text(widget.novoProduto == true ? "Novo Produto" : "Editar Produto"),
         centerTitle: true,
-        backgroundColor: Color(0xFFDDDEDF),
+        backgroundColor: const Color(0xFFDDDEDF),
         actions: [
           IconButton(
               onPressed: ()async{
@@ -125,6 +125,7 @@ class _FormScreenState extends State<FormScreen> {
                         onTap: (){
                           setState(() {
                             dentroCarrinho = true;
+                            // ignore: avoid_print
                             print(dentroCarrinho);
                           });
                         },
@@ -134,9 +135,9 @@ class _FormScreenState extends State<FormScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(6),
                             //border: Border.all(color: Color(0xFF639339)),
-                            color: dentroCarrinho == true ? Color(0xFFE5F0DB) : Colors.grey.shade100,
+                            color: dentroCarrinho == true ? const Color(0xFFE5F0DB) : Colors.grey.shade100,
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Icons.circle, color: Colors.green,),
@@ -152,6 +153,7 @@ class _FormScreenState extends State<FormScreen> {
                         onTap: (){
                           setState(() {
                             dentroCarrinho = false;
+                            // ignore: avoid_print
                             print(dentroCarrinho);
                           });
                         },
@@ -161,9 +163,9 @@ class _FormScreenState extends State<FormScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               //border: Border.all(color: Color(0xFF639339)),
-                              color: dentroCarrinho == false ? Color(0xFFF3BABD) : Colors.grey.shade100//Color(0xFFE5F0DB)
+                              color: dentroCarrinho == false ? const Color(0xFFF3BABD) : Colors.grey.shade100//Color(0xFFE5F0DB)
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Icons.circle, color: Colors.red,),
@@ -177,7 +179,7 @@ class _FormScreenState extends State<FormScreen> {
                 ),
                 const SizedBox(height: 40,),
                 loading == true
-                    ? CircularProgressIndicator()
+                    ? const CircularProgressIndicator()
                     : ElevatedButton(
                     onPressed: ()async{
                       setState(() => loading = true);
@@ -217,7 +219,7 @@ class _FormScreenState extends State<FormScreen> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               color: Colors.grey.withOpacity(0.7),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircularProgressIndicator(),

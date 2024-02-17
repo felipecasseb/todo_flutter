@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_flutter/screens/home_screen.dart';
 import 'package:todo_flutter/screens/recovery_password_screen.dart';
@@ -27,20 +26,20 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Todo Supermercado", style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-                Text("Acesse sua conta", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                const Text("Todo Supermercado", style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+                const Text("Acesse sua conta", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                 TextField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Email",
                   ),
                 ),
                 TextField(
                   controller: passwordController,
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Senha",
                   ),
                 ),
@@ -52,28 +51,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       ).then((value){
                         Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => HomeScreen())
+                            MaterialPageRoute(builder: (context) => const HomeScreen())
                         );
                       });
                     },
-                    child: Text("Acessar")
+                    child: const Text("Acessar")
                 ),
                 TextButton(
                     onPressed: (){
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => RecoveryPasswordScreen())
+                        MaterialPageRoute(builder: (context) => const RecoveryPasswordScreen())
                       );
                     },
-                    child: Text("Esqueci minha senha")
+                    child: const Text("Esqueci minha senha")
                 ),
-                Text("Ainda não tem acesso?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                const Text("Ainda não tem acesso?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                 TextButton(
                   onPressed: (){
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => SignupScreen())
+                        MaterialPageRoute(builder: (context) => const SignupScreen())
                     );
                   },
-                  child: Text("Crie sua conta", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),),
+                  child: const Text("Crie sua conta", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),),
                 ),
               ],
             ),

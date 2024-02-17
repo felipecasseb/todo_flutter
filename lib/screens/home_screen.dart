@@ -27,12 +27,13 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
               onPressed: ()async{
                 await auth.signOut();
+               // ignore: use_build_context_synchronously
                Navigator.pushReplacement(
                    context,
-                   MaterialPageRoute(builder: (context) => LoginScreen())
+                   MaterialPageRoute(builder: (context) => const LoginScreen())
                );
               },
-              icon: Icon(Icons.exit_to_app)
+              icon: const Icon(Icons.exit_to_app)
           ),
         ],
       ),
@@ -41,11 +42,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ElevatedButton.icon(
               onPressed: (){
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => FormScreen(novoProduto: true,))
+                    MaterialPageRoute(builder: (context) => const FormScreen(novoProduto: true,))
                 );
               },
-              label: Text("Novo Produto"),
-            icon: Icon(Icons.add),
+              label: const Text("Novo Produto"),
+            icon: const Icon(Icons.add),
           ),
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
@@ -54,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   .collection("produtos").snapshots(),
               builder: (context, snapshot){
                 if(snapshot.connectionState == ConnectionState.waiting){
-                  return Center(child: CircularProgressIndicator(),);
+                  return const Center(child: CircularProgressIndicator(),);
                 }else if(!snapshot.hasData){
-                  return Center(child: Text("Sem dados"),);
+                  return const Center(child: Text("Sem dados"),);
                 }else{
                   return ListView.builder(
                       itemCount: snapshot.data!.docs.length,
@@ -79,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           title: Text(dados['descricao']),
                           subtitle: Text(dados['quantidade'].toString()),
-                          leading: Icon(Icons.add_a_photo),
+                          leading: const Icon(Icons.add_a_photo),
                           trailing: Icon(
                             Icons.circle,
                             color:dados['dentro_carrinho'] == true

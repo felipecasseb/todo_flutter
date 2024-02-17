@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_flutter/screens/home_screen.dart';
-import 'package:todo_flutter/screens/login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -23,7 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Nova Conta", style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),),
+        title: const Text("Nova Conta", style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),),
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
@@ -36,14 +34,14 @@ class _SignupScreenState extends State<SignupScreen> {
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "E-mail",
               ),
             ),
             TextField(
               controller: passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Senha",
               ),
             ),
@@ -56,20 +54,21 @@ class _SignupScreenState extends State<SignupScreen> {
                   await firestore.collection("usuarios").doc(value.user!.email!).set({
                     "email" : value.user!.email!
                   });
+                  // ignore: use_build_context_synchronously
                   Navigator.pushReplacement(
                       context,
-                    MaterialPageRoute(builder: (context) => HomeScreen())
+                    MaterialPageRoute(builder: (context) => const HomeScreen())
                   );
                 });
               },
-              child: Text("Salvar"),
+              child: const Text("Salvar"),
             ),
-            Text("Já possui conta?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
+            const Text("Já possui conta?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
             TextButton(
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("Login", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
+              child: const Text("Login", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
             ),
           ],
         ),
