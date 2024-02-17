@@ -142,6 +142,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_barcode_scanner:
+    dependency: transitive
+    description:
+      name: flutter_barcode_scanner
+      sha256: a4ba37daf9933f451a5e812c753ddd045d6354e4a3280342d895b07fecaab3fa
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -150,6 +158,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      sha256: b068ffc46f82a55844acfa4fdbb61fad72fa2aef0905548419d97f0f95c456da
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.17"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -160,6 +176,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      sha256: a2bbf9d017fcced29139daa8ed2bba4ece450ab222871df93ca9eec6f80c34ba
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   http_parser:
     dependency: transitive
     description:
@@ -216,6 +240,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  permission_handler:
+    dependency: transitive
+    description:
+      name: permission_handler
+      sha256: "74e962b7fad7ff75959161bb2c0ad8fe7f2568ee82621c9c2660b751146bfe44"
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.3.0"
+  permission_handler_android:
+    dependency: transitive
+    description:
+      name: permission_handler_android
+      sha256: "1acac6bae58144b442f11e66621c062aead9c99841093c38f5bcdcc24c1c3474"
+      url: "https://pub.dev"
+    source: hosted
+    version: "12.0.5"
+  permission_handler_apple:
+    dependency: transitive
+    description:
+      name: permission_handler_apple
+      sha256: bdafc6db74253abb63907f4e357302e6bb786ab41465e8635f362ee71fd8707b
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.4.0"
+  permission_handler_html:
+    dependency: transitive
+    description:
+      name: permission_handler_html
+      sha256: "54bf176b90f6eddd4ece307e2c06cf977fb3973719c35a93b85cc7093eb6070d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      sha256: "23dfba8447c076ab5be3dee9ceb66aad345c4a648f0cac292c77b1eb0e800b78"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.0"
+  permission_handler_windows:
+    dependency: transitive
+    description:
+      name: permission_handler_windows
+      sha256: "1a790728016f79a41216d88672dbc5df30e686e811ad4e698bfc51f76ad91f1e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -224,6 +296,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
+  simple_barcode_scanner:
+    dependency: "direct main"
+    description:
+      name: simple_barcode_scanner
+      sha256: c7316a46535d0670dcab05c0b6407c51bdb430929a5a5c79d18cd9a143a021f3
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -301,6 +381,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.0"
+  webview_windows:
+    dependency: transitive
+    description:
+      name: webview_windows
+      sha256: "7572089e5d6fe09e790093c499fcb6d76a552250187dbcb89790987b1fb723db"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
 sdks:
   dart: ">=3.2.4 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.16.0"

@@ -38,6 +38,8 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
   cloud_firestore: ^4.14.0
+  http: ^1.2.0
+  simple_barcode_scanner: ^0.1.0
 
 dev_dependencies:
   flutter_test:
