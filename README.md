@@ -53,12 +53,12 @@ cd flutter run
 # Atualizações (Features)
 Apenas algumas sugestões:
 
-[ ] Acrescentar valores reais de cada produto
-[ ] Acrescentar valor total dos produtos acrescentados no carrinho
-[ ] Notificações em dialog para cada ação realizada (Ex: Produto adicionado ao carrinho, Produto retirado do carrinho, entre outros..)
+- [ ] Acrescentar valores reais de cada produto
+- [ ] Acrescentar valor total dos produtos acrescentados no carrinho
+- [ ] Notificações em dialog para cada ação realizada (Ex: Produto adicionado ao carrinho, Produto retirado do carrinho, entre outros..)
 
 Você também pode adicionar sua sugestão de melhoria.
-[ ]
+- [ ]
 
 # Tire suas dúvidas
 
